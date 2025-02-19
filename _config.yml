@@ -56,3 +56,5 @@ remote_theme: just-the-docs/just-the-docs
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+exclude:
+  - .idea/
