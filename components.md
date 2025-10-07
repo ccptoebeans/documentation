@@ -1,7 +1,6 @@
 ---
 title: Components
 has_toc: false
-parent: Contributing
 ---
 
 The carbon engine is organized as a set of components, each providing specific functionality. The following table
