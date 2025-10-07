@@ -3,8 +3,11 @@ title: Components
 has_toc: false
 ---
 
-The carbon engine is organized as a set of components, each providing specific functionality. The following table
-provides an overview of available open-source components and their purpose.
+The carbon engine is organized as a set of components, each providing specific functionality. In order to assemble a
+full runtime environment, [a process called "Update Binaries"](updatebinaries.md) is currently used by games built with 
+Carbon.
+
+The following table provides an overview of available open-source components and their purpose.
 
 | Component | Description                            | Repository                                                                                                                      |
 |-----------|----------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|
