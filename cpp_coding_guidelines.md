@@ -144,7 +144,7 @@ The rationale behind this is that it will ensure that `Foo.h` can stand on its o
 
 Avoid including non-system libraries in externally exposed header files
 
-Interfaces that are exposed to users outside of the project should endeavor to limit the inclusion of outside SDKs and libraries in the header file. Use forward declarations if possible. The rationale behind this is that otherwise the users of this interface become dependent on the external library and must set up paths to that library for inclusion. This is both a nuisance and can go horribly wrong if they for instance don't pick the right version of the external library/SDK to use for the include. Another example relates to [[BlueVectorTypes#Custom_Vector_Types|Blue Vector Types]]. So, avoid this dependency at all cost.
+Interfaces that are exposed to users outside of the project should endeavor to limit the inclusion of outside SDKs and libraries in the header file. Use forward declarations if possible. The rationale behind this is that otherwise the users of this interface become dependent on the external library and must set up paths to that library for inclusion. This is both a nuisance and can go horribly wrong if they for instance don't pick the right version of the external library/SDK to use for the include. So, avoid this dependency at all cost.
 
 ### Externally exposed headers
 
