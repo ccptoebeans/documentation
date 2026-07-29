@@ -14,7 +14,7 @@ We call this step the "Update Binaries" process. The one and only purpose of thi
 
 - needs to understand how different applications are copied
 
-Clearly the first two requirements are at odds with each other due to inherent differences between different platforms - for example, Batch scripts which work out of the box on Windows cannot be run on on macOS. Since EVE is making heavy use of Python, and a Python version is pre-installed on most operating systems, then a simple python script which only requires standard library modules is a good candidate to satisfy the first two requirements.
+Clearly the first two requirements are at odds with each other due to inherent differences between different platforms - for example, Batch scripts which work out of the box on Windows cannot be run on macOS. Since EVE is making heavy use of Python, and a Python version is pre-installed on most operating systems, then a simple python script which only requires standard library modules is a good candidate to satisfy the first two requirements.
 
 Requirement number 3 is a question of providing a suitable data structure. This can be as trivial as maintaining a look up table of "application names" to "binaries required by platform, environment, and architecture".
 
