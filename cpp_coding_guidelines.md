@@ -1045,7 +1045,7 @@ for( auto x : vec )
 }
 ```
 
-- Use the new smart pointers, especially `unique_ptr`.
+- Use the new smart pointers, especially `unique_ptr`:
 ```c++
 // pretty good:
 char* data = new char[m_bitmapWidth * m_bitmapHeight * 4];
@@ -1054,7 +1054,7 @@ ON_BLOCK_EXIT( [&]{ delete[] data; } );
 // even better:
 std::unique_ptr<char[]> data( new char[m_bitmapWidth * m_bitmapHeight * 4] );
 
-// ... or in this case ([[Memory_Tracking#Standard_containers|details here]]):
+// ... or in this case, using `CcpMallocBuffer` from `CcpMemory.h`: 
 CcpMallocBuffer data( "myTrackingName", m_bitmapWidth * m_bitmapHeight * 4 );
 ```
 
