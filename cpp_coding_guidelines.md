@@ -1069,9 +1069,7 @@ You run the risk of getting shot. All GOTO shenanigans, could be done much more 
 
 Use the `NO_EVALS` compiler define so that we don't have to ship them out in releases.
 
----- This marks the end of the original C++ coding styleguide, following are the Platform Agnostic Guidelines ----
-
-## General Recommendations
+## Platform Agnostic Guidelines
 
 ### Naming files and folders
 
