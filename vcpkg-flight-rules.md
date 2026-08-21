@@ -14,9 +14,6 @@ If you are new to vcpkg, please read this primer
 ### How do I build a carbon component?
 
 All of our carbon components require cmake.
-On Windows we use MSVC v141, however we are in the process of upgrading to v145.
-On macOS we use AppleClang.
-
 For detailed information on how our build system works, please see the section on building
 - [How we build Carbon Components](building.md)
 
