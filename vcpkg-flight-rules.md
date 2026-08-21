@@ -1,21 +1,21 @@
 # vcpkg Flight Rules
 
-Instructions & Guidelines for:
-- Building carbon engine components using vcpkg
-- Updating this vcpkg Registry
-
-## vcpkg Primer
+**vcpkg Primer**
 
 If you are new to vcpkg, please read this primer
 - [vcpkg Primer](vcpkg-primer.md)	
 
-## Building Carbon Components
+**Table of contents**
+- [How do I build a carbon component?](#how-do-i-build-a-carbon-component)
+- [How do I update a port in the vcpkg registry?](#how-do-i-update-a-port-in-the-vcpkg-registry)
+- [How to I create a new port in a vcpkg registry?](#how-to-i-create-a-new-port-in-a-vcpkg-registry)
+- [How do I test local changes to vcpkg dependencies?](#how-do-i-test-local-changes-to-vcpkg-dependencies)
+
+### How do I build a carbon component?
 
 All of our carbon components require cmake.
 On Windows we use MSVC v141, however we are in the process of upgrading to v145.
 On macOS we use AppleClang.
-
-### Instructions for building
 
 For detailed information on how our build system works, please see the section on building
 - [How we build Carbon Components](building.md)
@@ -44,7 +44,7 @@ Build the component
 cmake --build .cmake-build-x64-windows-release
 ```
 
-## Updating vcpkg ports
+## How do I update a port in the vcpkg registry?
 
 You've made a change to a component, we'll use scheduler as an example. You've created a PR that got accepted into scheduler's main branch, and tagged a new version, lets say v5.0.0.
 Now you want to make that version available to other components through vcpkg.
@@ -94,7 +94,7 @@ Then push this branch up to your fork and create a pull request to the main bran
 
 When the pull request is merged, the registry will contain the new version of scheduler
 
-## Creating new vcpkg ports
+## How to I create a new port in a vcpkg registry?
 
 First follow the first steps of the "Updating vcpkg ports":
 > - First, if you haven't done already, fork the [carbonengine/vcpkg-registry](https:github.com/carbonengine/vcpkg-registry) repository.
@@ -128,7 +128,7 @@ Add my-new-port
 Then just as in the "Updating vcpkg ports" section, push your new branch to your fork, and create a pull request into the main branch of the [carbonengine/vcpkg-registry](https:github.com/carbonengine/vcpkg-registry) repository.
 
 
-## Making local changes to dependencies
+## How do I test local changes to vcpkg dependencies?
 
 Lets say you're working on a change to [Core](https://github.com/carbonengine/core) and you want to build [Scheduler](https://github.com/carbonengine/scheduler) with it locally before creating a pull request.
 [Scheduler](https://github.com/carbonengine/scheduler) depends on [Core](https://github.com/carbonengine/core), so a common carbon engine developer work flow is testing dependency changes with dependent projects.
