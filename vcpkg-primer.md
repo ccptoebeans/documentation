@@ -1,9 +1,9 @@
 # vcpkg Primer
 
-This primer is a useful starting point for learning about vcpkg and how we use it to build the Carbon Engine. It provides information & context where I felt the official vcpkg documentation was unclear or simply lacking.
+This primer is a useful starting point for learning about vcpkg and how we use it to build the Carbon Engine. It provides information & context where the official vcpkg documentation is unclear or simply lacking.
 [**The official vcpkg documentation website**](https://learn.microsoft.com/en-us/vcpkg/) provides an excellent reference for everything discussed here, and if you want to learn more about how vcpkg works, you should go and read that.
 
-If you are an employee of Fenris Creations and want a more thourough understanding of how we leverage vcpkg in our builds, please see the video of my (ccptoebeans) vcpkg Training Session that I ran for the platform team before we carried out the open source project.
+If you are an employee of Fenris Creations and want a more thourough understanding of how we leverage vcpkg in our builds, please see the video of the vcpkg Training Session that ccptoebeans ran for the platform team before we carried out the open source project.
 This documentation is a distillation of the information given in that training session.
 
 ### What does it do?
@@ -87,7 +87,7 @@ As this repository [carbonengine/vcpkg-registry](https://github.com/carbonengine
 
 ### How vcpkg Resolves Dependencies
 
-As I mentioned above, a vcpkg port contains two files, a vcpkg.json file and a portfile.
+As mentioned above, a vcpkg port contains two files, a vcpkg.json file and a portfile.
 The vcpkg.json file contains version information about the package:
 [ports/carbon-scheduler/vcpkg.json](https://github.com/carbonengine/vcpkg-registry/blob/fcc57c09e7a86b45da0570947e8294c401a403ae/ports/carbon-scheduler/vcpkg.json)
 ```
@@ -147,7 +147,7 @@ Here we can see that our registry contains 3 different versions of scheduler, `1
 Notice the `git-tree` field in each version object. This hash `fd1982af1a2699de5406f133cbc951975c69d952` is the git-object-hash of scheduler's port directory, at the commit that `1.4.1` was added to the repository. [Here](https://github.com/carbonengine/vcpkg-registry/tree/7d42c331ccbeb413db97ead9e8cde2b85931e820/ports/carbon-scheduler).
 Using that hash, it is able to access that directory at that specific commit. It then reads the vcpkg.json file, does the same thing for all of **it's** dependencies, and then proceeds to run the `portfile.cmake` script, which builds scheduler for us.
 
-This leads nicely into my next point, which is that the only directories important for a vcpkg registry, are the `ports/` directory and the `versions/` directory. The `ports/` directory is maintained by hand, and the `versions/` directory is maintained by tooling. 
+This leads nicely into the next point, which is that the only directories important for a vcpkg registry, are the `ports/` directory and the `versions/` directory. The `ports/` directory is maintained by hand, and the `versions/` directory is maintained by tooling.
 ***Please do not manually edit the contents of the `versions/` directory unless you know what you are doing.***
 There might be scenario's where editing the versions directory is nessecary, but they are rather specific, and something else has ususally already gone wrong.
 
